@@ -1,0 +1,31 @@
+.footer {
+    background-color: #013220;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .nav-link:hover {
+    color: #98fb98;
+  }
+  

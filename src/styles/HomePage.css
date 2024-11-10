@@ -1,0 +1,82 @@
+.home .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  background-image: linear-gradient(135deg, #8fbc8f 0%, #2e8b57 100%);
+  color: white;
+  text-align: center;
+}
+
+.home h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: white;
+  color: #2e8b57;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #90ee90;
+  color: #2e8b57;
+  transform: scale(1.05);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background-color: #f0f0f0;
+}
+
+.feature {
+  text-align: center;
+  max-width: 250px;
+}
+
+.feature img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.about {
+  padding: 50px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}

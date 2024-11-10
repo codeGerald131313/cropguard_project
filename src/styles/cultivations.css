@@ -1,0 +1,20 @@
+.cultivations-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cultivations-page h1 {
+    margin-bottom: 20px;
+  }
+  
+  .filter-controls {
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  

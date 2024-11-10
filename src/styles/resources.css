@@ -1,0 +1,96 @@
+.resources-page {
+    padding: 40px;
+    background-color: #f0f8ff;
+    text-align: center;
+  }
+  
+  .resources-page h1 {
+    font-size: 2.5rem;
+    color: #2e8b57;
+    margin-bottom: 20px;
+  }
+  
+  .resources-page p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .resources-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .resource-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+  }
+  
+  .resource-item h3 {
+    font-size: 1.5rem;
+    color: #2e8b57;
+  }
+  
+  .resource-type {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .resource-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .resource-link {
+    background-color: #2e8b57;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resource-link:hover {
+    background-color: #3cb371;
+  }
+  
+  .featured-section {
+    background-color: #e6f7ff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+  }
+  
+  .featured-section h2 {
+    font-size: 2rem;
+    color: #2e8b57;
+    margin-bottom: 20px;
+  }
+  
+  .featured-section p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .featured-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+  }
+  
+  .featured-section li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  

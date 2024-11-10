@@ -1,0 +1,103 @@
+/* src/styles/PlagueDetailPage.css */
+
+.plague-detail-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.plague-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.plague-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    border: 4px solid #ffffff;
+    object-fit: cover;
+    margin-right: 2rem;
+    flex-shrink: 0; /* No reducir el tamaño de la imagen */
+}
+
+.plague-info {
+    flex: 1; /* Permite que la información ocupe el espacio restante */
+}
+
+.plague-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    margin: 0;
+}
+
+.plague-subtitle {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    border-bottom: 2px solid #66bb6a;
+    padding-bottom: 0.5rem;
+    color: #2e7d32;
+}
+
+.plague-description,
+.plague-lifecycle,
+.plague-habitat,
+.plague-impact,
+.plague-control {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.plague-impact ul,
+.plague-control ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.plague-impact li,
+.plague-control li {
+    margin-bottom: 1rem;
+}
+
+.plague-impact strong,
+.plague-control strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+    .plague-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plague-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .plague-info {
+        width: 100%;
+    }
+
+    .plague-title {
+        text-align: center;
+    }
+
+    .plague-details {
+        padding: 1rem;
+    }
+}
