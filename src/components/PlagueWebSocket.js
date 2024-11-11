@@ -19,7 +19,7 @@ const PlagaWebSocket = () => {
   ]);
 
   useEffect(() => {
-    const socketInstance = new WebSocket("ws://localhost:8000/ws/plague_updates/");
+    const socketInstance = new WebSocket("ws://cropguardbackend-production.up.railway.app//ws/plague_updates/");
     setSocket(socketInstance);
 
     socketInstance.onopen = () => {
@@ -54,7 +54,7 @@ const PlagaWebSocket = () => {
 
   const fetchPlagaDetails = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/plagues/${1}/`);
+      const response = await fetch(`https://cropguardbackend-production.up.railway.app/api/plagues/${1}/`);
       const data = await response.json();
       if (data.status === "success") {
         setPlagueDetails((prevDetails) => ({

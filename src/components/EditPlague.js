@@ -19,7 +19,7 @@ const EditPlague = () => {
 
     useEffect(() => {
         // Fetch the plague data
-        axios.get(`http://localhost:8000/api/plagues/${id}/`)
+        axios.get(`https://cropguardbackend-production.up.railway.app/api/plagues/${id}/`)
             .then(response => {
                 const data = response.data.data;
                 setPlague(data);
@@ -36,7 +36,7 @@ const EditPlague = () => {
             .catch(error => console.error('Error fetching plague details:', error));
         
         // Fetch plague types for the dropdown
-        axios.get('http://localhost:8000/api/plague-types/')
+        axios.get('https://cropguardbackend-production.up.railway.app/api/plague-types/')
             .then(response => setPlagueTypes(response.data.data))
             .catch(error => console.error('Error fetching plague types:', error));
     }, [id]);
@@ -48,7 +48,7 @@ const EditPlague = () => {
         const parsedPlagueType = JSON.parse(plagueType);
         const idTypePlague = parsedPlagueType.id;
 
-        axios.put(`http://localhost:8000/api/plagues/update/${id}/`, {
+        axios.put(`https://cropguardbackend-production.up.railway.app/api/plagues/update/${id}/`, {
             name,
             common_name: commonName,
             scientific_name: scientificName,

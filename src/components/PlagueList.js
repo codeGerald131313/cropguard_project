@@ -8,7 +8,7 @@ const PlagueList = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/plagues/')
+        axios.get('https://cropguardbackend-production.up.railway.app/api/plagues/')
             .then(response => setPlagues(response.data.data))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -21,7 +21,7 @@ const PlagueList = () => {
 
     // Function to handle delete action
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8000/api/plagues/delete/${id}/`)
+        axios.delete(`https://cropguardbackend-production.up.railway.app/api/plagues/delete/${id}/`)
             .then(response => {
                 console.log('Plague deleted:', response.data);
                 // Update the state to remove the deleted plague

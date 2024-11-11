@@ -15,7 +15,7 @@ const AddPlague = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/plague-types/")
+      .get("https://cropguardbackend-production.up.railway.app/api/plague-types/")
       .then((response) => setPlagueTypes(response.data.data))
       .catch((error) => console.error("Error fetching plague types:", error));
   }, []);
@@ -24,7 +24,7 @@ const AddPlague = () => {
     console.log(plagueTypeId);
     event.preventDefault();
     axios
-      .post("http://localhost:8000/api/plagues/create/", {
+      .post("https://cropguardbackend-production.up.railway.app/api/plagues/create/", {
         name,
         common_name: commonName,
         scientific_name: scientificName,
