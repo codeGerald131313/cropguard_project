@@ -19,7 +19,7 @@ const PlagaWebSocket = () => {
   ]);
 
   useEffect(() => {
-    const socketInstance = new WebSocket("ws://cropguardbackend-production.up.railway.app//ws/plague_updates/");
+    const socketInstance = new WebSocket("wss://cropguardbackend-production.up.railway.app/ws/plague_updates/");
     setSocket(socketInstance);
 
     socketInstance.onopen = () => {
