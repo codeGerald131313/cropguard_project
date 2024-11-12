@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet.heat';
-import '../styles/cultivations.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HeatmapLayer = ({ points }) => {
   const map = useMap();
@@ -27,17 +27,19 @@ const CultivationsPage = () => {
   ];
 
   return (
-    <div className="cultivations-page">
-      <h1>Tu Mapa de Cultivos</h1>
-      <p>Visualiza el estado de salud de tus cultivos con el mapa de calor.</p>
+    <div className="container my-5">
+      <h1 className="text-center mb-4">Tu Mapa de Cultivos</h1>
+      <p className="text-center mb-4">Visualiza el estado de salud de tus cultivos con el mapa de calor.</p>
 
-      <div className="filter-controls">
-        <label htmlFor="filter">Filtrar por:</label>
-        <select id="filter" value={filter} onChange={e => setFilter(e.target.value)}>
-          <option value="all">Todos</option>
-          <option value="plagas">Plagas</option>
-          <option value="enfermedades">Enfermedades</option>
-        </select>
+      <div className="row mb-4">
+        <div className="col-md-6 offset-md-3">
+          <label htmlFor="filter" className="form-label">Filtrar por:</label>
+          <select id="filter" className="form-select" value={filter} onChange={e => setFilter(e.target.value)}>
+            <option value="all">Todos</option>
+            <option value="plagas">Plagas</option>
+            <option value="enfermedades">Enfermedades</option>
+          </select>
+        </div>
       </div>
 
       <div className="map-container">

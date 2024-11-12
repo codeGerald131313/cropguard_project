@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/HistoryPage.css"; // Ensure you have the correct CSS file for this layout
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PlagaWebSocket = () => {
   const [socket, setSocket] = useState(null);
@@ -70,96 +70,77 @@ const PlagaWebSocket = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <div className="websocket-section">
-        <h2>Real-time Predictions</h2>
+    <div className="container my-5 p-4 bg-light rounded">
+      <div className="websocket-section mb-4">
+        <h2>Predicciones en tiempo real</h2>
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="text-danger">{error}</p>}
 
-        <h3>Predictions:</h3>
-        <ul>
+        <h3>Predicciones:</h3>
+        <div className="row">
           {predictions.map((prediction, index) => (
-            <li
-              key={index}
-              style={{
-                backgroundColor: prediction.color === "red" ? "#ffcccc" : "#ccffcc",
-                padding: "10px",
-                margin: "5px 0",
-                borderRadius: "5px",
-              }}
-            >
-              {prediction.predicted_class} - Confidence: {prediction.confidence}
+            <div key={index} className="col-md-6 mb-4">
+              <div className={`p-3 rounded ${prediction.color === "red" ? "bg-danger text-white" : "bg-success text-white"}`}>
+                {prediction.predicted_class} - Confianza: {prediction.confidence}%
 
-              {plagueDetails[prediction.class_index] && (
-                <div style={plagueCardStyle}>
-                  <h4>Details for {plagueDetails[prediction.class_index].name}</h4>
-                  <p><strong>Description:</strong> {plagueDetails[prediction.class_index].description}</p>
-                  <p><strong>Type:</strong> {plagueDetails[prediction.class_index].plague_type.name}</p>
-
-                  {plagueDetails[prediction.class_index].control_methods && (
-                    <div>
-                      <h5>Control Methods:</h5>
-                      <ul>
-                        <li><strong>Method:</strong> {plagueDetails[prediction.class_index].control_methods.method || 'N/A'}</li>
-                        <li><strong>Frequency:</strong> {plagueDetails[prediction.class_index].control_methods.frequency || 'N/A'}</li>
-                      </ul>
+                {plagueDetails[prediction.class_index] && (
+                  <div className="mt-3 p-3 bg-white border rounded text-dark">
+                    <h4>Detalles del {plagueDetails[prediction.class_index].name}</h4>
+                    <div className="row">
+                      <div className="col-6">
+                        <p><strong>Descripción:</strong> {plagueDetails[prediction.class_index].description || 'N/A'}</p>
+                        <p><strong>Tipo:</strong> {plagueDetails[prediction.class_index].plague_type.name || 'N/A'}</p>
+                      </div>
+                      <div className="col-6">
+                        {plagueDetails[prediction.class_index].control_methods && (
+                          <>
+                            <h5>Métodos de control:</h5>
+                            <p><strong>Método:</strong> {plagueDetails[prediction.class_index].control_methods.method || 'N/A'}</p>
+                            <p><strong>Frecuencia:</strong> {plagueDetails[prediction.class_index].control_methods.frequency || 'N/A'}</p>
+                          </>
+                        )}
+                      </div>
+                      <div className="col-6">
+                        {plagueDetails[prediction.class_index].damage_symptoms && (
+                          <>
+                            <h5>Síntomas del daño:</h5>
+                            <p><strong>Síntoma:</strong> {plagueDetails[prediction.class_index].damage_symptoms.symptom || 'N/A'}</p>
+                            <p><strong>Gravedad:</strong> {plagueDetails[prediction.class_index].damage_symptoms.severity || 'N/A'}</p>
+                          </>
+                        )}
+                      </div>
                     </div>
-                  )}
-
-                  {plagueDetails[prediction.class_index].damage_symptoms && (
-                    <div>
-                      <h5>Damage Symptoms:</h5>
-                      <ul>
-                        <li><strong>Symptom:</strong> {plagueDetails[prediction.class_index].damage_symptoms.symptom || 'N/A'}</li>
-                        <li><strong>Severity:</strong> {plagueDetails[prediction.class_index].damage_symptoms.severity || 'N/A'}</li>
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )}
-            </li>
+                  </div>
+                )}
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
       <div className="history-section">
-        <h1 className="history-title">Pest and Disease History</h1>
-        <div className="history-filters">
-          <input type="text" placeholder="Search..." className="filter-input" />
-          <button className="filter-button">Filter</button>
+        <h1 className="display-6">Historial de plagas y enfermedades</h1>
+        <div className="input-group mb-3">
+          <input type="text" className="form-control" placeholder="Buscar..." />
+          <button className="btn btn-outline-secondary">Filtrar</button>
         </div>
-        <div className="history-list">
+        <div className="list-group">
           {records.map((record) => (
-            <div key={record.id} className="history-item">
-              <div className="history-item-date">{record.date}</div>
-              <div className="history-item-content">
-                <h2 className="history-item-name">{record.name}</h2>
-                <p className="history-item-type">{record.type}</p>
-                <p className="history-item-description">{record.description}</p>
+            <div key={record.id} className="list-group-item">
+              <div className="d-flex justify-content-between">
+                <div>
+                  <h5 className="mb-1">{record.name}</h5>
+                  <small className="text-muted">{record.date}</small>
+                </div>
+                <p className="mb-1">{record.type}</p>
               </div>
+              <p className="text-muted">{record.description}</p>
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-};
-
-const plagueCardStyle = {
-  backgroundColor: "#f9f9f9",
-  padding: "15px",
-  borderRadius: "5px",
-  border: "1px solid #ddd",
-  marginTop: "10px",
-};
-
-const containerStyle = {
-  width: '50%',
-  margin: '0 auto',
-  padding: '20px',
-  backgroundColor: '#f1f1f1',
-  borderRadius: '8px',
-  border: '1px solid #ddd'
 };
 
 export default PlagaWebSocket;

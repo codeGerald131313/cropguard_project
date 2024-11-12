@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/resources.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilePdf, faVideo, faFileAlt, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
 const resources = [
   {
@@ -32,33 +34,58 @@ const resources = [
   },
 ];
 
+// Función para obtener el icono adecuado según el tipo de recurso
+const getIconForType = (type) => {
+  switch (type) {
+    case 'Documento PDF':
+      return <FontAwesomeIcon icon={faFilePdf} className="text-danger" />;
+    case 'Video':
+      return <FontAwesomeIcon icon={faVideo} className="text-success" />;
+    case 'Artículo':
+      return <FontAwesomeIcon icon={faFileAlt} className="text-secondary" />;
+    case 'Webinar':
+      return <FontAwesomeIcon icon={faChalkboardTeacher} className="text-success" />;
+    default:
+      return <FontAwesomeIcon icon={faFileAlt} className="text-muted" />;
+  }
+};
+
 const ResourcesPage = () => {
   return (
-    <div className="resources-page">
-      <h1>Resources</h1>
-      <p>Explore our collection of resources designed to help you manage and protect your crops effectively.</p>
+    <div className="container my-5">
+      <h1 className="text-center mb-4">Recursos</h1>
+      <p className="text-center mb-5">
+        Explora nuestra colección de recursos diseñados para ayudarte a gestionar y proteger tus cultivos de manera efectiva.
+      </p>
 
-      <div className="resources-list">
+      <div className="row">
         {resources.map(resource => (
-          <div key={resource.id} className="resource-item">
-            <h3>{resource.title}</h3>
-            <span className="resource-type">{resource.type}</span>
-            <p>{resource.description}</p>
-            <a href={resource.link} target="_blank" rel="noopener noreferrer" className="resource-link">
-              Access Resource
-            </a>
+          <div key={resource.id} className="col-md-6 col-lg-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title d-flex align-items-center">
+                  {getIconForType(resource.type)} {/* Icono dinámico */}
+                  <span className="ms-2">{resource.title}</span>
+                </h5>
+                <span className="badge bg-success mb-2">{resource.type}</span>
+                <p className="card-text">{resource.description}</p>
+                <a href={resource.link} target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-outline-success">
+                  Acceder al recurso
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      <div className="featured-section">
-        <h2>Best Practices</h2>
-        <p>Discover the best practices for maintaining healthy and sustainable crops:</p>
-        <ul>
-          <li>Monitor your crops regularly for signs of pests or disease.</li>
-          <li>Rotate crops to reduce the buildup of pests and diseases in the soil.</li>
-          <li>Use biological control methods where possible to reduce reliance on chemical pesticides.</li>
-          <li>Implement integrated pest management (IPM) strategies for long-term sustainability.</li>
+      <div className="mt-5">
+        <h2 className="text-center">Mejores Prácticas</h2>
+        <p className="text-center">Descubre las mejores prácticas para mantener cultivos saludables y sostenibles:</p>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">Monitorea tus cultivos regularmente para detectar signos de plagas o enfermedades.</li>
+          <li className="list-group-item">Rota los cultivos para reducir la acumulación de plagas y enfermedades en el suelo.</li>
+          <li className="list-group-item">Usa métodos de control biológico siempre que sea posible para reducir la dependencia de pesticidas químicos.</li>
+          <li className="list-group-item">Implementa estrategias de manejo integrado de plagas (MIP) para una sostenibilidad a largo plazo.</li>
         </ul>
       </div>
     </div>
