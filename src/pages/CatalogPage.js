@@ -64,7 +64,12 @@ const CatalogPage = () => {
                 <button type="button" className="btn-close" onClick={handleCloseModal} aria-label="Close"></button>
               </div>
               <div className="modal-body">
-                <img src={selectedItem.image} alt={selectedItem.name} className="img-fluid mb-3" />
+              <img 
+  src={selectedItem.image} 
+  alt={selectedItem.name} 
+  className="img-fluid mb-3" 
+  style={{ width: '500px', height: '300px', objectFit: 'cover' }} 
+/>
                 <p><strong>Tipo:</strong> {selectedItem.type}</p>
                 <p><strong>Descripción:</strong> {selectedItem.description}</p>
               </div>

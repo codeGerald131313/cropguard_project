@@ -51,7 +51,7 @@ const HomePage = () => {
           <div className="col-md-4 mb-4">
             <div className="card shadow-sm p-3">
               <img
-                src="https://files.oaiusercontent.com/file-XGZq8flUDJrMRSoZ8MV2r71u?se=2024-11-12T01%3A35%3A00Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D879998f1-8051-49f1-8b21-02182d6cdd42.webp&sig=htNMGTpmUXlVUFrJcATMl1%2BXFLr68/6tpIWTyPKdiJw%3D"
+                src="https://media.istockphoto.com/id/1414916304/es/foto/concepto-de-objetivo-de-desarrollo-sostenible-manos-sosteniendo-la-red-de-comunicaci%C3%B3n-global.jpg?s=612x612&w=0&k=20&c=thZuR7og6KVb73U2LgitnjjKtmy9fVzKrtMzWcsV_qA="
                 alt="Catálogo"
                 className="img-fluid mb-3"
                 style={{ height: '200px', objectFit: 'cover', width: '100%' }}
@@ -64,7 +64,7 @@ const HomePage = () => {
           <div className="col-md-4 mb-4">
             <div className="card shadow-sm p-3">
               <img
-                src="https://files.oaiusercontent.com/file-tdvavjzSPytWJE1snM5ejhQm?se=2024-11-12T01%3A36%3A51Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dfb89e245-f1c6-414b-97a1-a78771773700.webp&sig=tIv%2B1aRWooomRNd9JZTB2d6J783GazLZCDQvuQ%2BJoo4%3D"
+                src="https://impulsapopular.com/wp-content/uploads/2024/08/0255-Agrotech-ideas-para-emprender-en-este-sector.jpg"
                 alt="Recursos"
                 className="img-fluid mb-3"
                 style={{ height: '200px', objectFit: 'cover', width: '100%' }}
